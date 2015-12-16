@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+
+  <head>
+      <title>GKK Open Source</title>
+
+
+    <link rel="stylesheet" href="ol/ol.css" type="text/css">
+    <script src="ol/ol.js" type="text/javascript"></script>
+	  <link rel="stylesheet" href="style.css" type="text/css">	
+    <script src="pdf/tools/jquery-1.11.3.js" type="text/javascript"></script>	
+	  <script src="jquery.nicescroll.js"></script>
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+	  <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.css" type="text/css">	
+
+
+
+	
+  
+  
+  
+  </head>
+  
+  <body>
+    
+    <div id="map" class="map">
+	
+	<!--**************************************-->
+<div id="side-bar"  >
+ <a href ="http://www.hs-karlsruhe.de/home.html"><img src="Hska_logo.png"  style="width:48px;height:48px;margin-left:60px ;margin-right:60px;"></a>
+			
+			<div id="side-bar-campus" class="side-bar-campus" style="display:none;">
+	
+				
+				
+				
+				<ul  class="nav nav-pills nav-stacked">
+						<li><p class="Buildings_Name" href="#Floors">Building A<p>
+							<ul class="nav nav-pills nav-stacked">
+								  <li id="Floors"><p class="Floor" href="#Rooms">Floor 0</p>
+										<ul id="Rooms" >
+											<li ><p class="Room">Room A001</p></li>
+											<li ><p class="Room">Room A021</p></li>
+											<li ><p class="Room">Room A003</p></li>
+										</ul>
+									</li>
+									<li id="Floors"><p class="Floor" href="#Rooms">Floor 1</p>
+										<ul id="Rooms" >
+											<li ><p class="Room">Room A101</p></li>
+											<li ><p class="Room">Room A101</p></li>
+											<li ><p class="Room">Room A103</p></li>
+										</ul>
+									</li>
+								
+							</ul>
+						</li>
+						  <li><p class="Buildings_Name" href="#Floors">Building B<p>
+							<ul class="nav nav-pills nav-stacked">
+								  <li id="Floors"><p class="Floor" href="#Rooms">Floor 0</p>
+										<ul id="Rooms" >
+											<li ><p class="Room">Room B001</p></li>
+											<li ><p class="Room">Room B021</p></li>
+											<li ><p class="Room">Room B003</p></li>
+										</ul>
+									</li>
+									<li id="Floors"><p class="Floor" href="#Rooms">Floor 1</p>
+										<ul id="Rooms" >
+											<li ><p class="Room">Room B101</p></li>
+											<li ><p class="Room">Room B101</p></li>
+											<li ><p class="Room">Room B103</p></li>
+										</ul>
+									</li>
+								
+							</ul>
+						</li>  
+				</ul>
+				
+				
+				
+				
+				
+			</div>
+			
+			<!--Coordinates-->
+			<div class="Coordinates">
+			<div  class="span6" id="mouse-position">&nbsp;</div>
+			<div id="cim" class="cim"></div>
+			<div id="text" class="text">Coordinates:</div>	
+			</div>
+			
+			
+		</div>
+		
+		
+		
+		
+		<!--**************************************-->
+		<!--Navigation Tabs-->
+		<div class="container" >
+				<ul class="nav nav-tabs nav-justified">
+					  <li id="Nav_Campus"><a href="#" onclick="Campus_Clicked()">Campus</a></li>
+					   <li id="Nav_Links" class="dropdown"> <a href="#" class=" dropdown-toggle"  data-toggle="dropdown">Links</a>
+							<ul class="dropdown-menu">
+							  
+							  <li><a href="https://qis.hs-karlsruhe.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=user&type=0&application=qispos">Studienleistungsverwaltung (Online-Service 1)</a></li>
+							  <li><a href="#">Studentische Selbstverwaltung (Online-Service 2)</a></li>
+							  <li><a href="#">Studentische Selbstverwaltung Rückmeldung (Online-Service 3)</a></li>
+							  <li ><a href="https://ilias.hs-karlsruhe.de/login.php?target=&soap_pw=&ext_uid=&cookies=nocookies&client_id=HSKA&lang=de">ilias</a></li>
+							  <li><a href="#">LSF</a></li>
+							</ul>
+						</li>  
+					  <li id="Nav_Courses"><a href="#" onclick="Courses_Clicked()">Courses</a></li>
+					  <li id="Nav_People"><a  href="#" onclick="People_Clicked()">People</a></li>
+					  <li id="Nav_Routing"><a href="#" onclick="Routing_Clicked()">Routing</a></li> 
+					  <li id="Nav_Help"><a href="#" onclick="Help_Clicked()">?</a></li> 
+				</ul>
+		</div>
+		
+		<!--**************************************-->
+
+		<div id="search" style="z-index:10000; position:absolute;top:80px;right:100px;">
+			<input id="addr" type="text" name="addr" value='' size="10" />
+			<button type="button" id="gobutt" onclick="keres()">Search</button>
+			<div id="results" /></div>
+		</div>
+		
+		<button id="button" class="pdf_button" ><a id="printbtn" onclick="prntList()"><img src="pdf.png"  ></a></button>
+		<button id="button" class="geopdf_button" onclick="on_off('geo-panel')"><img src="GeoPDF.png"  ></button>
+		<div id="geo-panel">
+			<iframe id="my_iframe" style="display:none;"></iframe>
+			<p>Choose the layers and press download!</p><br>
+			<p>HO Building</p>
+			<input id="chk3" type="checkbox" name="chk1" value="chk">Building<br></input>
+			<input id="chk1" type="checkbox" name="chk1" value="chk">Ground floor rooms<br></input>
+			<input id="chk2" type="checkbox" name="chk1" value="chk">First floor rooms<br></input>
+			<input id="chk4" type="checkbox" name="chk1" value="chk">Second floor rooms<br></input>	
+			<br><a href="pdf/GKK_Geopdf.pdf" download onclick="geopdf()"><br>Download</a>
+		</div>
+		
+		<div id="csuszi" class="csuszi">
+		<form>
+		<input id="ep-opac" name="foo" type="range" min="1" max="3" step="1" value="1" oninput="setVal(this.value),csuszka()"></input>
+			</form>
+			</div>
+    <div id="emeletek_label">Stairs</div>
+		
+		
+	
+	</div>
+		
+	
+	<script src="mouse.js" type="text/javascript"></script>
+	<script src="bubble.js" type="text/javascript"></script>
+  <script src="ol/app.js" type="text/javascript"></script>
+  <script src="ol/layers.js" type="text/javascript"></script>
+	<script src="print.js" type="text/javascript"></script>
+	<script src="Tab_Functions.js" type="text/javascript"></script>
+	<script src="Accordion.js" type="text/javascript"></script>
+	<script src="scrollbar.js" type="text/javascript"></script>
+	<script src="pdf/teszt.js" type="text/javascript"></script>
+	
+	
+	
+  </body>
+</html>

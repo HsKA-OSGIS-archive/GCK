@@ -1,0 +1,400 @@
+
+#Floors {
+    
+    display:none;
+}
+
+#Rooms {
+    
+    display:none;
+}
+
+	
+	
+	
+	#map {
+		position:absolute;
+		left:0px;
+		top:0px;
+		p:0px;
+		height: 100%;
+		width: 100%;	}
+
+	.csuszi{
+		position:absolute;
+		height:22px;
+		width:120px;
+		top:150px;
+		right:100px;
+		z-index:100000;
+		background-color:#DB0031; 
+		opacity: 1;
+		color:white;
+		border-radius:25px;
+		padding-left:10px;
+		padding-right:10px;
+		padding-top:7px;
+		padding-bottom:2px;
+			}
+	#emeletek_label{
+		margin-left:10px;	
+		position:absolute;
+		top:125px;
+		font-size: 20px;
+		right:100px;
+		height:45px;
+		border-radius:15px;
+		width:70px;
+		padding-left:10px;
+		padding-bottom:5px;
+		z-index:10000;
+		background-color:#DB0031; 
+		opacity: 1;
+		color:white;
+		}
+	#geo-panel{
+		z-index:100000;
+		display:none;
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-left:-150px;
+		margin-top:-150px;
+		height:300px;
+		width:300px;
+		border-radius:25px;
+		background-color:#DB0031;
+		opacity:0.9;
+		color:white;
+		padding-top:25px;
+		padding-left:25px;			
+a {color:white}			}
+a:link{color:white;}
+a:visited{color:white;}
+a:hover{color:white;}
+a:active{color:red;}
+		
+	#addr{border:none;}
+	#gobutt{
+		height: 25px;
+		color:white;
+		background-color:#DB0031;
+		border:none;
+				
+		}
+	.cim{
+		font-size:11px;
+		position: absolute;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+		
+		z-index:1000;}
+		
+ 	.span6{
+		z-index:400000;
+		position: absolute;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+		color:white;
+		font-size:11px;}
+		
+	.text{
+		z-index:20000;
+		font-size:11px;
+		position:floating;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+		color:white;}	
+		
+	.map:-moz-full-screen {
+		height: 100%;}
+	.map:-webkit-full-screen {
+		height: 100%;}
+	.map:fullscreen {
+		height: 100%;}
+	.ol-rotate {
+		top: 3em;}
+	.layerselect{
+		position: absolute;
+		top:10px;
+		right:70px;
+		z-index:500000}
+
+#side-bar{
+	position:absolute; 
+	left:0px;
+	top:0px; 
+	width:200px; 
+	height:100%; 
+	background-color:#DB0031; 
+	opacity: 0.96;
+	z-index:100000;
+}
+
+.side-bar-campus{
+	position:floating; 
+	margin-left:10px;
+	margin-bottom:10px;
+	margin-top:10px;
+	margin-right:10px;
+	background-color:white; 
+	opacity: 0.96;
+	z-index:100000;
+	border-radius: 5px 5px 0 0;
+	overflow:scroll;
+	height:60%; 
+	
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+
+::-webkit-scrollbar-track {
+border: 1px solid #eeeeee;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: #eeeeee;  
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #eeeeee;  
+}
+
+.side-bar-campus ul{
+	margin: 0;
+    padding: 8px 0;
+    
+   font-family: 'Roboto', sans-serif;
+
+	font-size: 12px;
+	padding: 14px 10px;
+	
+}
+
+
+.filter{
+	position:floating; 
+	margin-left:10px;
+	margin-bottom:10px;
+	margin-top:10px;
+	margin-right:10px;
+	opacity: 0.96;
+	z-index:100000;
+	border-radius: 5px 5px 0 0;
+}
+
+
+.Buildings_Name{
+	font-size: 13px;
+	background-color:#eeeeee;
+	border-radius: 5px 5px  0;
+	color: #121212;
+	text-align: center;
+}
+
+
+.Floor{
+	
+	border-top: 1px solid #cdcdcd;
+	border-bottom: 1px solid #cdcdcd;
+	color: #242424;
+	
+}
+
+.Room{
+	
+}
+.Coordinates{
+position: absolute;
+left:10px;
+bottom:10px;
+width:150px;
+
+}
+
+.container {
+ position: absolute;
+ right:0px;
+ width:100%;
+ background-color: #DB0031;
+ opacity: 0.95;
+ z-index: 1;
+}		
+.container ul { 
+	
+    margin: 0;
+    padding: 8px 0;
+    border: 0;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+.nav a {
+  color: #5a5a5a;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 14px 10px;
+  
+}
+
+
+.nav li {
+  display: inline;
+}
+ 
+.nav-tabs > li > a {
+    font-size: 12px;
+	font-family: 'Roboto', sans-serif;
+	color:  white;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+}
+
+.pdf_button{
+position:absolute;
+ right:10px;
+ bottom:10px; 
+ width:60px; 
+ height:60px; 
+ opacity: 1;
+z-index:100000;
+}
+	
+.geopdf_button{
+	position:absolute; 
+	right:70px;
+	bottom:10px; 
+	width:60px; 
+	height:60px; 
+	opacity: 1;
+	z-index:100000;
+	
+}
+
+#button{
+	z-index:100000;
+	opacity: 1;
+	background-color:#DB0031;
+	border-radius: 10px 10px 0 0;
+	}
+
+
+
+.pdf_button  > img{
+	width:40px;
+	height:40px;
+	position:relative;	
+}
+
+.geopdf_button  > img{
+	width:50px;
+	height:50px;
+	position:relative;
+	
+}
+xmp{ white-space:pre-wrap; word-wrap:break-word; }
+
+input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #fff;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+	border-width:2px;
+	border:solid;
+	border-color:#fff;
+    background-color:#DB0031;;
+    margin-top: -4px;
+}
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #fff;
+}
+input[type=range]::-ms-track {
+    width: 300px;
+    height: 5px;
+    background: #fff;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-ms-fill-lower {
+	background: #fff;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-ms-fill-upper {
+	background: #fff;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-ms-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+	border-width:2px;
+	border:solid;
+	border-color:#fff;
+    background-color: rgba(120,185,187,1);
+    margin-top: -4px;
+}
+input[type=range]:focus ::-ms-fill-lower{
+    outline: none;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #fff;
+}
+input[type=range]::-moz-range-track {
+    width: 190px;
+    height: 3px;
+    background: #fff;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+	border-width:1px;
+	border:solid;
+	border-color:#fff;
+    background-color: rgba(120,185,187,1);
+    margin-top: -4px;
+	}	
+input[type=range]:-moz-focusring {
+    outline: none;
+}
+input[type=range]:focus::-moz-range-track {
+    background: #fff;
+}
+
+

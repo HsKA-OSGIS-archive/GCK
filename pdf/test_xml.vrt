@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<OGRVRTDataSource><OGRVRTLayer name="fos"><SrcDataSource>/home/bartfay/Dokumentumok/Egyetem/opensource/fos.shp</SrcDataSource><SrcLayer>fos</SrcLayer><GeometryType>wkbLineString</GeometryType><LayerSRS>epsg:2964</LayerSRS></OGRVRTLayer><OGRVRTLayer name="kula"><SrcDataSource>null</SrcDataSource><SrcLayer>kula</SrcLayer><GeometryType>wkbLineString</GeometryType><LayerSRS>epsg:2964</LayerSRS></OGRVRTLayer></OGRVRTDataSource>
