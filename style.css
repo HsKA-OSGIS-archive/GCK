@@ -1,29 +1,108 @@
 
-#Floors {
-    
-    display:none;
+	
+@media mobiles (max-width:768px){ 
+	#sidebar{width:20%;} 	
+	.container{ width:80%;} 
+	 
+	}
+
+@media tablets (min-width:768px)and(max-width:992px){ 
+	#sidebar{
+		width:20%;}
+		
+	
+	.container{
+		width:80%;
+	} 
+	
 }
 
-#Rooms {
-    
-    display:none;
+@media tablets (min-width:992px){ 
+	
+	#sidebar{
+		width:20%;
+		
+	} 
+	
+	.container{
+		width:80%;
+	} 
+}
 }
 
-	
-	
-	
-	#map {
+#map {
 		position:absolute;
 		left:0px;
 		top:0px;
 		p:0px;
 		height: 100%;
 		width: 100%;	}
+		
+	.cim{
+		font-size:11px;
+		position: absolute;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+		
+		z-index:1000;}
+		
+ 	.span6{
+		z-index:400000;
+		position: absolute;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+		color:white;
+		font-size:11px;}
+		
+	.text{
+		z-index:20000;
+		font-size:11px;
+		position:floating;
+		margin-bottom: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+		color:white;}	
+		
+	.map:-moz-full-screen {
+		height: 100%;}
+	.map:-webkit-full-screen {
+		height: 100%;}
+	.map:fullscreen {
+		height: 100%;}
+	.ol-rotate {
+		top: 3em;}
+	.layerselect{
+		position: absolute;
+		top:10px;
+		right:70px;
+		z-index:500000}
 
-	.csuszi{
+		
+/*Side Bar*/
+.Coordinates{
+position: absolute;
+left:10px;
+bottom:10px;
+width:150px;
+
+}
+#side-bar{
+	position:absolute; 
+	left:0px;
+	top:0px; 
+	width:200px; 
+	height:100%; 
+	background-color:#DB0031; 
+	opacity: 0.96;
+	z-index:100000;
+}
+
+.csuszi{
 		position:absolute;
 		height:22px;
-		width:120px;
+		width:200px;
 		top:150px;
 		right:100px;
 		z-index:100000;
@@ -82,60 +161,9 @@ a:active{color:red;}
 		border:none;
 				
 		}
-	.cim{
-		font-size:11px;
-		position: absolute;
-		margin-bottom: 10px;
-		margin-left: 10px;
-		margin-right: 10px;
-		
-		z-index:1000;}
-		
- 	.span6{
-		z-index:400000;
-		position: absolute;
-		margin-bottom: 10px;
-		margin-left: 10px;
-		margin-right: 10px;
-		color:white;
-		font-size:11px;}
-		
-	.text{
-		z-index:20000;
-		font-size:11px;
-		position:floating;
-		margin-bottom: 10px;
-		margin-left: 10px;
-		margin-right: 10px;
-		color:white;}	
-		
-	.map:-moz-full-screen {
-		height: 100%;}
-	.map:-webkit-full-screen {
-		height: 100%;}
-	.map:fullscreen {
-		height: 100%;}
-	.ol-rotate {
-		top: 3em;}
-	.layerselect{
-		position: absolute;
-		top:10px;
-		right:70px;
-		z-index:500000}
-
-#side-bar{
-	position:absolute; 
-	left:0px;
-	top:0px; 
-	width:200px; 
-	height:100%; 
-	background-color:#DB0031; 
-	opacity: 0.96;
-	z-index:100000;
-}
-
+ 
 .side-bar-campus{
-	position:floating; 
+	position:float; 
 	margin-left:10px;
 	margin-bottom:10px;
 	margin-top:10px;
@@ -170,17 +198,38 @@ border-radius: 10px;
 background: #eeeeee;  
 }
 
-.side-bar-campus ul{
+.Room{cursor:pointer;}
+
+#side-bar-campus div{
 	margin: 0;
     padding: 8px 0;
     
    font-family: 'Roboto', sans-serif;
 
 	font-size: 12px;
-	padding: 14px 10px;
+	padding: 14px 10px;;
 	
 }
 
+
+.Buildings_Name{
+	font-size: 13px;
+	background-color:#eeeeee;
+	border-radius: 5px 5px  0;
+	color: #121212;
+	text-align: center;
+	cursor:pointer;
+}
+
+
+#Floors{
+	
+	border-top: 1px solid #cdcdcd;
+	border-bottom: 1px solid #cdcdcd;
+	color: #242424;
+		cursor:pointer;
+	
+}
 
 .filter{
 	position:floating; 
@@ -193,39 +242,11 @@ background: #eeeeee;
 	border-radius: 5px 5px 0 0;
 }
 
-
-.Buildings_Name{
-	font-size: 13px;
-	background-color:#eeeeee;
-	border-radius: 5px 5px  0;
-	color: #121212;
-	text-align: center;
-}
-
-
-.Floor{
-	
-	border-top: 1px solid #cdcdcd;
-	border-bottom: 1px solid #cdcdcd;
-	color: #242424;
-	
-}
-
-.Room{
-	
-}
-.Coordinates{
-position: absolute;
-left:10px;
-bottom:10px;
-width:150px;
-
-}
-
+/*Navigation Bar*/
 .container {
  position: absolute;
- right:0px;
- width:100%;
+ left:200px;
+ width:90%;
  background-color: #DB0031;
  opacity: 0.95;
  z-index: 1;
@@ -247,7 +268,6 @@ width:150px;
   padding: 14px 10px;
   
 }
-
 
 .nav li {
   display: inline;
@@ -303,6 +323,7 @@ z-index:100000;
 	position:relative;
 	
 }
+
 xmp{ white-space:pre-wrap; word-wrap:break-word; }
 
 input[type=range]{
@@ -396,5 +417,6 @@ input[type=range]:-moz-focusring {
 input[type=range]:focus::-moz-range-track {
     background: #fff;
 }
+
 
 

@@ -1,5 +1,15 @@
+var mousePositionControl = new ol.control.MousePosition({
+  coordinateFormat: ol.coordinate.createStringXY(1),
+  projection: 'EPSG:3857',
+  // comment the following two lines to have the mouse position
+  // be placed within the map.
+  className: 'custom-mouse-position',
+  target: document.getElementById('mouse-position'),
+  undefinedHTML: '&nbsp;'
+  
+});
 view =  new ol.View({
-    center: [41008790.5, 6276982.5],
+    center: [934225.3, 6277257.1],
 	//rotation: -Math.PI / 8//,
     zoom: 16
   });
@@ -16,6 +26,9 @@ var map = new ol.Map({
   target: 'map',
   view:	view
 });
+
+
+
 
 var szint=0
 
@@ -50,4 +63,8 @@ function keres(){
 		map.getView().setZoom(16);});
 
 }
+
+
+
+
 

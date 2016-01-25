@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<OGRVRTDataSource>
+  <OGRVRTLayer name="epuletek">
+    <SrcDataSource>/opt/tomcat/webapps/geoserver/data/data/epuletek.shp</SrcDataSource>
+    <SrcLayer>epuletek</SrcLayer>
+    <GeometryType>wkbPolygon</GeometryType>
+    <LayerSRS>epsg:3857</LayerSRS>
+  </OGRVRTLayer>
+</OGRVRTDataSource>
