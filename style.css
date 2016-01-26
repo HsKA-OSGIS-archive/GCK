@@ -132,6 +132,8 @@ width:150px;
 		color:white;
 		}
 	#geo-panel{
+		overflow-y:hidden;
+		overflow-x:hidden;
 		z-index:100000;
 		display:none;
 		position:absolute;
@@ -139,7 +141,7 @@ width:150px;
 		left:50%;
 		margin-left:-150px;
 		margin-top:-150px;
-		height:300px;
+		height:320px;
 		width:300px;
 		border-radius:25px;
 		background-color:#DB0031;
@@ -227,7 +229,7 @@ background: #eeeeee;
 	border-top: 1px solid #cdcdcd;
 	border-bottom: 1px solid #cdcdcd;
 	color: #242424;
-		cursor:pointer;
+	cursor:pointer;
 	
 }
 
@@ -417,6 +419,20 @@ input[type=range]:-moz-focusring {
 input[type=range]:focus::-moz-range-track {
     background: #fff;
 }
+#ho-b{
+margin-left:10px;
+position:relative;
+padding-left:10px;
+}
+.ho_c{position:relative;left:15px;padding-left:15px;}
+.ho_r{position:relative;left:15px;padding-left:15px;}
+.ho_c_a{display:none;position:relative;left:35px;padding-left:15px;}
+
+#R-b{
+position:relative;
+
+margin-left:10px;
+padding-left:10px;}
 
 
 

@@ -149,13 +149,30 @@
 		<button id="button" class="geopdf_button" onclick="on_off('geo-panel')"><img src="GeoPDF.png"  ></button>
 		<div id="geo-panel">
 			<iframe id="my_iframe" style="display:none;"></iframe>
-			<p>Choose the layers and press download!</p><br>
-			<p>HO Building</p>
-			<input id="chk1" type="checkbox" name="chk1" value="chk">Building<br></input>
-			<input id="chk2" type="checkbox" name="chk1" value="chk">Ground floor rooms<br></input>
-			<input id="chk3" type="checkbox" name="chk1" value="chk">First floor rooms<br></input>
-			<input id="chk4" type="checkbox" name="chk1" value="chk">Second floor rooms<br></input>	
-			<br><a href="pdf/GKK_Geopdf.pdf" download onclick="ex(),geopdf()"><br>Download</a>
+			<p>Choose the layers and press download!</p>
+
+		<div id="epuletek">Buildings<br>
+		<div id="ho-b">HO Building<br>
+<div class="ho_c"><input id="chk2"  type="checkbox" name="chk1" value="chk" onclick="on_off('alarm1'),on_off('ps1')">Ground floor rooms<br></input></div>
+<div id="alarm1" class="ho_c_a"><input id="chk7"  type="checkbox" name="chk1" value="chk">Ground floor alarms<br></input></div>
+<div id="ps1" class="ho_c_a"><input id="chk8"  type="checkbox" name="chk1" value="chk">Ground floor Power Sockets<br></input></div>
+<div class="ho_c"><input id="chk3"  type="checkbox" name="chk1" value="chk">First floor rooms<br></input></div>
+<div class="ho_c"><input id="chk4"  type="checkbox" name="chk1" value="chk">Second floor rooms<br></input></div>		
+			</div>
+
+			<div id="R-b">R building<br>
+			<div class="ho_r"><input id="chk5" type="checkbox" name="chk1" value="chk">Ground floor rooms<br></input></div>
+			<div class="ho_r"><input id="chk6" type="checkbox" name="chk1" value="chk">First floor rooms<br></input></div>
+			</div>
+			<div id="build_all" style="position:relative;left:20px;"  >
+			Building base
+			<input id="chk1" style="margin-left:5px;"type="checkbox" name="chk1" value="chk"></input>
+			
+			</div>
+			</div>
+			
+			<a href="pdf/GKK_Geopdf.pdf" download onclick="ex(),geopdf()">Download</a>
+			
 		</div>
 		
 		<div id="csuszi" class="csuszi">
