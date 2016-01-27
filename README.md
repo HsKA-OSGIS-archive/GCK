@@ -32,7 +32,9 @@ Vahram Dilbaryan
     Own digitized vector data (attached as sample data)
 #System requirements
    •	 All of the above mentioned softwares and libraries
+   
    •	The application needs internet connection
+   
    •	Permission for the user (on the server) to create new documents to the destination folder.
 #Software installation
 First of all it is needed to reassure that all the mandatory software background is working.
