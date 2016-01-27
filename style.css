@@ -1,35 +1,16 @@
-
-	
 @media mobiles (max-width:768px){ 
 	#sidebar{width:20%;} 	
-	.container{ width:80%;} 
-	 
 	}
 
 @media tablets (min-width:768px)and(max-width:992px){ 
-	#sidebar{
-		width:20%;}
-		
-	
-	.container{
-		width:80%;
-	} 
-	
+	#sidebar{width:20%;}
 }
 
 @media tablets (min-width:992px){ 
+	#sidebar{width:20%;}
+} 
 	
-	#sidebar{
-		width:20%;
-		
-	} 
 	
-	.container{
-		width:80%;
-	} 
-}
-}
-
 #map {
 		position:absolute;
 		left:0px;
@@ -79,32 +60,15 @@
 		right:70px;
 		z-index:500000}
 
-		
-/*Side Bar*/
-.Coordinates{
-position: absolute;
-left:10px;
-bottom:10px;
-width:150px;
 
-}
-#side-bar{
-	position:absolute; 
-	left:0px;
-	top:0px; 
-	width:200px; 
-	height:100%; 
-	background-color:#DB0031; 
-	opacity: 0.96;
-	z-index:100000;
-}
+
 
 .csuszi{
 		position:absolute;
 		height:22px;
+		right:10px;
 		width:200px;
-		top:150px;
-		right:100px;
+		top:100px;
 		z-index:100000;
 		background-color:#DB0031; 
 		opacity: 1;
@@ -114,13 +78,15 @@ width:150px;
 		padding-right:10px;
 		padding-top:7px;
 		padding-bottom:2px;
+		cursor:pointer;
 			}
+			
 	#emeletek_label{
-		margin-left:10px;	
+		right:10px;	
 		position:absolute;
-		top:125px;
-		font-size: 20px;
-		right:100px;
+		top:75px;
+		font-size: 18px;
+		font-family: 'Roboto', sans-serif;
 		height:45px;
 		border-radius:15px;
 		width:70px;
@@ -130,7 +96,9 @@ width:150px;
 		background-color:#DB0031; 
 		opacity: 1;
 		color:white;
+		cursor:pointer;
 		}
+		
 	#geo-panel{
 		overflow-y:hidden;
 		overflow-x:hidden;
@@ -163,125 +131,94 @@ a:active{color:red;}
 		border:none;
 				
 		}
- 
-.side-bar-campus{
-	position:float; 
-	margin-left:10px;
+ 		
+/*Side Bar*/
+
+.Coordinates{
+position: absolute;
+margin-top:10px;
+left:10px;
+bottom:10px;
+width:150px;
+
+
+}
+
+#Campus{
+	margin-left: 2px;
+	margin-right:0px;
 	margin-bottom:10px;
-	margin-top:10px;
-	margin-right:10px;
-	background-color:white; 
+	margin-top:2px;
+    padding: 2px;
+    font-family: Roboto, sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	padding: 2px;
+	background-color:white;
+	border-radius:4px;
+	color: #0d0d0d;
+	text-align: center;
+	opacity: 0.97; 
+	z-index: 1;
+	
+}
+ #side-bar{
+	position:absolute; 
+	left:0px;
+	top:0px; 
+	width:200px; 
+	height:100%; 
+	background-color:#DB0031; 
 	opacity: 0.96;
 	z-index:100000;
-	border-radius: 5px 5px 0 0;
-	overflow:scroll;
-	height:60%; 
-	
 }
-
-/* Scrollbar styles */
-::-webkit-scrollbar {
-width: 12px;
-height: 12px;
-}
-
-
-::-webkit-scrollbar-track {
-border: 1px solid #eeeeee;
-border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-background: #eeeeee;  
-border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-background: #eeeeee;  
-}
-
-.Room{cursor:pointer;}
-
-#side-bar-campus div{
-	margin: 0;
-    padding: 8px 0;
-    
-   font-family: 'Roboto', sans-serif;
-
-	font-size: 12px;
-	padding: 14px 10px;;
-	
-}
-
-
-.Buildings_Name{
-	font-size: 13px;
-	background-color:#eeeeee;
-	border-radius: 5px 5px  0;
-	color: #121212;
-	text-align: center;
-	cursor:pointer;
-}
-
-
-#Floors{
-	
-	border-top: 1px solid #cdcdcd;
-	border-bottom: 1px solid #cdcdcd;
-	color: #242424;
-	cursor:pointer;
-	
-}
-
-.filter{
+ 
+.side-bar-campus{
 	position:floating; 
 	margin-left:10px;
 	margin-bottom:10px;
-	margin-top:10px;
+	margin-top:12px;
 	margin-right:10px;
+	background-color:#DB0031; 
 	opacity: 0.96;
 	z-index:100000;
-	border-radius: 5px 5px 0 0;
-}
-
-/*Navigation Bar*/
-.container {
- position: absolute;
- left:200px;
- width:90%;
- background-color: #DB0031;
- opacity: 0.95;
- z-index: 1;
-}		
-.container ul { 
+	height:80%;
 	
-    margin: 0;
-    padding: 8px 0;
-    border: 0;
-    border-radius: 0;
-    -moz-border-radius: 0;
-    font-family: 'Roboto', sans-serif;
-
-}
-.nav a {
-  color: #5a5a5a;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 14px 10px;
-  
+	
 }
 
-.nav li {
-  display: inline;
+.side-bar-campus div{
+	margin-left: 2px;
+	margin-right:0px;
+	margin-bottom:0px;
+	margin-top:2px;
+    padding: 2px 0;
+    font-family: Roboto, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	padding: 2px;
+	background-color:#fafafa;
+	border-radius: 4px;
+	color: #1a1a1a;
+	text-align: center;
+	cursor:pointer;
+	
 }
- 
-.nav-tabs > li > a {
-    font-size: 12px;
-	font-family: 'Roboto', sans-serif;
-	color:  white;
-    border-radius: 5px 5px 0 0;
-    padding: 10px;
-}
+
+.side-bar-campus div ul  {
+	
+	font-size: 13px;
+	cursor:pointer;
+	background-color:white;
+	text-align: center;
+	margin: 4px;
+	border-radius: 6px ;
+	}
+
+
+
+
+/*Buttons*/
 
 .pdf_button{
 position:absolute;
@@ -413,12 +350,14 @@ input[type=range]::-moz-range-thumb {
     background-color: rgba(120,185,187,1);
     margin-top: -4px;
 	}	
+	
 input[type=range]:-moz-focusring {
     outline: none;
 }
 input[type=range]:focus::-moz-range-track {
     background: #fff;
 }
+
 #ho-b{
 margin-left:10px;
 position:relative;
@@ -433,6 +372,5 @@ position:relative;
 
 margin-left:10px;
 padding-left:10px;}
-
 
 

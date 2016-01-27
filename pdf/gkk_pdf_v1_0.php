@@ -68,7 +68,7 @@ if($all==6){$max=6;}
 if($all==7){$max=7;}
 if($all==8){$max=8;}
 
-$json = '['.$second.','.$eighth.','.$seventh.','.$third.','.$fourth.','.$fifth.','.$sixth.','.$first.']';
+$json = '['.$second.','.$eighth.','.$seventh.','.$third.','.$fourth.','.$fifth.','.$sixth.','.$first.']';//layer collection
 $data = json_decode($json, true);
 $z=count($data);
 $xml = new SimpleXMLElement('<OGRVRTDataSource/>');

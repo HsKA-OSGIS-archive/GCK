@@ -4,20 +4,17 @@
 
   <head>
    <title>GKK Open Source</title>
+
    <link rel="stylesheet" href="ol/ol.css" type="text/css">
    <link rel="stylesheet" href="style.css" type="text/css">
    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.css" type="text/css">	
    <script src="ol/ol.js" type="text/javascript"></script>	 
    <script src="pdf/tools/jquery-1.11.3.js" type="text/javascript"></script>	
    <script src="bootstrap-3.3.6-dist/js/bootstrap.js"></script>
-
-
-
-
-
-	
-  
-  
+ <script src="angularjs/angular.js"></script>
+   <script src="myApp.js" type="text/javascript"></script>
+   <script src="myController.js" type="text/javascript"></script>
+ 
   
   </head>
   
@@ -25,128 +22,60 @@
     
     <div id="map" class="map">
 	
-	<!--**************************************-->
-
+	<!--***************--SideBar--***********************-->
+			<div id="side-bar" > 
 			
-			<div id="side-bar" > <!--**************************************-->
 			
-			<a href ="http://www.hs-karlsruhe.de/home.html"><img src="Hska_logo.png"  style="width:48px;height:48px;margin-left:60px ;margin-right:60px;"></a>
+				<a href ="http://www.hs-karlsruhe.de/home.html"><img src="Hska_logo.png"  style="width:48px;height:48px;margin-left:60px ;margin-right:60px;"></a>
+				
 			
-			<div id="side-bar-campus" class="side-bar-campus" style="display:none;">
-	
-				<div id="accordion"> 
-						<div class="Buildings_Name">Building HO</div>
-						<ul style="display:none" class="nav nav-pills nav-stacked">
-							<div id="accordion2">
-								<div id="Floors">Floor 0</div>
-								<ul id="Rooms" style="display:none" class="nav nav-pills nav-stacked">
-									<li ><p  class="Room">Room 001</p></li>
-									<li ><p  class="Room">Room 002</p></li>
-									<li ><p  class="Room">Room 003</p></li>
-									<li ><p  class="Room">Room 004</p></li>
-									<li ><p  class="Room">Room 005</p></li>
-									<li ><p  class="Room">Room 006</p></li>
-									<li ><p  class="Room">Room 007</p></li>
-								</ul>
-							</div>
-							<div id="accordion2">
-								<div id="Floors">Floor 1</div>
-								<ul id="Rooms" style="display:none" class="nav nav-pills nav-stacked">
-									<li ><p class="Room">Room 101</p></li>
-									<li ><p class="Room">Room 102</p></li>
-									<li ><p class="Room">Room 103</p></li>
-									<li ><p class="Room">Room 104</p></li>
-									<li ><p class="Room">Room 105</p></li>
-									<li ><p class="Room">Room 106</p></li>
-									<li ><p class="Room">Room 107</p></li>	
-								</ul>
-							</div>
-							<div id="accordion2">
-								<div id="Floors">Floor 2</div>
-								<ul id="Rooms" style="display:none" class="nav nav-pills nav-stacked">
-									<li ><p class="Room">Room 201</p></li>
-									<li ><p class="Room">Room 202</p></li>
-									<li ><p class="Room">Room 203</p></li>
-									<li ><p class="Room">Room 204</p></li>
-									<li ><p class="Room">Room 205</p></li>
-									<li ><p class="Room">Room 206</p></li>
-									<li ><p class="Room">Room 207</p></li>
-									<li ><p class="Room">Room 208</p></li>
-									<li ><p class="Room">Room 209</p></li>
-									<li ><p class="Room">Room 210</p></li>
-									<li ><p class="Room">Room 211</p></li>
-									<li ><p class="Room">Room 212</p></li>
-									
-								</ul>
-							</div>
+				<!--SideBar-Campus div -->
+				<div id="side-bar-campus" class="side-bar-campus" ng-app="myApp" ng-controller="myCtrl">
+					<div id="Campus" onclick="history.go(0)">Campus</div>
+					<!--Buildinds div -->
+					<div id="Buildings" >
+						<ul class="nav nav-pills nav-stacked" ondblclick="history.go(0)" ng-repeat="building in Buildings">
+							<li id="Building"  ng-click="selectB(building)" on-click="history.go(0)">{{building.name}} Builing </li>
 						</ul>
-						
-						<div class="Buildings_Name">Building R</div>
-						<ul style="display:none" class="nav nav-pills nav-stacked">
-							<div id="accordion2">
-									<div id="Floors">Floor 0</div>
-									<ul id="Rooms" style="display:none" class="nav nav-pills nav-stacked">
-										<li ><p class="Room">Akademisches Auslandsamt (AAA)</p></li>
-										<li ><p class="Room">Rektorat</p></li>
-										<li ><p class="Room">Studentische Abteilung</p></li>
-										<li ><p class="Room">Verwaltung</p></li>
-										<li ><p class="Room">Reprographie RICOH</p></li>
-									</ul>
-								</div>
+					</div>
+					<!--Floors div -->
+					<div id="Floors" style="display:none;">	
+						 <ul class="nav nav-pills nav-stacked" ng:repeat="floor in selectedB.floors">
+							<li id="Floor" ng:click="selectF(floor)" >{{floor.id}} Floor </li>
 						</ul>
+					</div> 
+					<!--Rooms div -->
+					<div id="Rooms" style="display:none;">
+						<ul   class="nav nav-pills nav-stacked" ng:repeat="room in selectedF.rooms">
+							<li id="Room">{{room}} Room </li>
+						</ul>	
+					</div>
+				</div>
+				
+				<!--Coordinates div -->
+				<div class="Coordinates">
+				<div  class="span6" id="mouse-position">&nbsp;</div>
+				<div id="cim" class="cim"></div>
+				<div id="text" class="text">Coordinates:</div>	
+				
 				</div>
 				
 				
-				
-				
-				
-			</div>
-			
-			<!--Coordinates-->
-			<div class="Coordinates">
-			<div  class="span6" id="mouse-position">&nbsp;</div>
-			<div id="cim" class="cim"></div>
-			<div id="text" class="text">Coordinates:</div>	
-			</div>
-			
-			
 		</div>
 		
-		
-		
-		
-		<!--**************************************-->
-		<!--Navigation Tabs-->
-		<div class="container" >
-				<ul class="nav nav-tabs nav-justified">
-					  <li id="Nav_Campus"><a href="#" onclick="Campus_Clicked()">Campus</a></li>
-					   <li id="Nav_Links" class="dropdown"> <a href="#" class=" dropdown-toggle"  data-toggle="dropdown">Links</a>
-							<ul class="dropdown-menu">
-							  
-							  <li><a href="https://qis.hs-karlsruhe.de/qisserver/servlet/de.his.servlet.RequestDispatcherServlet?state=user&type=0&application=qispos">Studienleistungsverwaltung (Online-Service 1)</a></li>
-							  <li><a href="#">Studentische Selbstverwaltung (Online-Service 2)</a></li>
-							  <li><a href="#">Studentische Selbstverwaltung Rückmeldung (Online-Service 3)</a></li>
-							  <li ><a href="https://ilias.hs-karlsruhe.de/login.php?target=&soap_pw=&ext_uid=&cookies=nocookies&client_id=HSKA&lang=de">ilias</a></li>
-							  <li><a href="#">LSF</a></li>
-							</ul>
-						</li>  
-					  <li id="Nav_Courses"><a href="#" onclick="Courses_Clicked()">Courses</a></li>
-					  <li id="Nav_People"><a  href="#" onclick="People_Clicked()">People</a></li>
-					  <li id="Nav_Routing"><a href="#" onclick="Routing_Clicked()">Routing</a></li> 
-					  <li id="Nav_Help"><a href="#" onclick="Help_Clicked()">?</a></li> 
-				</ul>
-		</div>
-		
-		<!--**************************************-->
-
-		<div id="search" style="z-index:10000; position:absolute;top:80px;right:100px;">
+		<!--****************--Search--**********************-->
+		<div id="search" style="z-index:10000; position:absolute; top:10px; right:10px;">
 			<input id="addr" type="text" name="addr" value='' size="10" />
 			<button type="button" id="gobutt" onclick="keres()">Search</button>
 			<div id="results" /></div>
 		</div>
 		
+		<!--****************--Buttons to download as Geopdf or pdf **********************-->
 		<button id="button" class="pdf_button" ><a id="printbtn" onclick="prntList()"><img src="pdf.png"  ></a></button>
 		<button id="button" class="geopdf_button" onclick="on_off('geo-panel')"><img src="GeoPDF.png"  ></button>
+		
+		
+		<!--****************--Window to download**********************-->
 		<div id="geo-panel">
 			<iframe id="my_iframe" style="display:none;"></iframe>
 			<p>Choose the layers and press download!</p>
@@ -175,12 +104,13 @@
 			
 		</div>
 		
+		<!--****************--Div to change Floor Layer--**********************-->
 		<div id="csuszi" class="csuszi">
 		<form>
 		<input id="ep-opac" name="foo" type="range" min="1" max="3" step="1" value="1" oninput="setVal(this.value),csuszka()"></input>
 			</form>
 			</div>
-    <div id="emeletek_label">Stairs</div>
+		<div id="emeletek_label">Floors</div>
 		
 		
 	
@@ -188,10 +118,8 @@
 		
 	
 	<script src="ol/app.js" type="text/javascript"></script>
-  <script src="ol/layers.js" type="text/javascript"></script>
+	<script src="ol/layers.js" type="text/javascript"></script>
 	<script src="ol/print.js" type="text/javascript"></script>
-	<script src="Tab_Functions.js" type="text/javascript"></script>
-	<script src="Accordion.js" type="text/javascript"></script>
 	<script src="pdf/gkk_pdf_v1_0.js" type="text/javascript"></script>
 	
 	
