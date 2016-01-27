@@ -4,17 +4,20 @@
 
   <head>
    <title>GKK Open Source</title>
-
    <link rel="stylesheet" href="ol/ol.css" type="text/css">
    <link rel="stylesheet" href="style.css" type="text/css">
    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.css" type="text/css">	
    <script src="ol/ol.js" type="text/javascript"></script>	 
    <script src="pdf/tools/jquery-1.11.3.js" type="text/javascript"></script>	
    <script src="bootstrap-3.3.6-dist/js/bootstrap.js"></script>
- <script src="angularjs/angular.js"></script>
+   <script src="angularjs/angular.js"></script>
    <script src="myApp.js" type="text/javascript"></script>
    <script src="myController.js" type="text/javascript"></script>
- 
+
+		
+		<script src="fromphp.js" type="text/javascript"></script>
+  
+  
   
   </head>
   
@@ -22,61 +25,63 @@
     
     <div id="map" class="map">
 	
-	<!--***************--SideBar--***********************-->
-			<div id="side-bar" > 
+	<!--**************************************-->
+
+			
+			<div id="side-bar" > <!--**************************************-->
+			
+			<a href ="http://www.hs-karlsruhe.de/home.html"><img src="Hska_logo.png"  style="width:48px;height:48px;margin-left:60px ;margin-right:60px;"></a>
 			
 			
-				<a href ="http://www.hs-karlsruhe.de/home.html"><img src="Hska_logo.png"  style="width:48px;height:48px;margin-left:60px ;margin-right:60px;"></a>
+			
+			<div id="side-bar-campus" class="side-bar-campus" ng-app="myApp" ng-controller="myCtrl">
+				<div id="Campus" onclick="history.go(0)"> Campus</div>
+		
+				<div id="Buildings" >
 				
-			
-				<!--SideBar-Campus div -->
-				<div id="side-bar-campus" class="side-bar-campus" ng-app="myApp" ng-controller="myCtrl">
-					<div id="Campus" onclick="history.go(0)">Campus</div>
-					<!--Buildinds div -->
-					<div id="Buildings" >
-						<ul class="nav nav-pills nav-stacked" ondblclick="history.go(0)" ng-repeat="building in Buildings">
-							<li id="Building"  ng-click="selectB(building)" on-click="history.go(0)">{{building.name}} Builing </li>
-						</ul>
-					</div>
-					<!--Floors div -->
-					<div id="Floors" style="display:none;">	
-						 <ul class="nav nav-pills nav-stacked" ng:repeat="floor in selectedB.floors">
-							<li id="Floor" ng:click="selectF(floor)" >{{floor.id}} Floor </li>
-						</ul>
-					</div> 
-					<!--Rooms div -->
-					<div id="Rooms" style="display:none;">
-						<ul   class="nav nav-pills nav-stacked" ng:repeat="room in selectedF.rooms">
-							<li id="Room">{{room}} Room </li>
-						</ul>	
-					</div>
+					<ul class="nav nav-pills nav-stacked" ng-repeat="building in Buildings">
+						
+						<li id="Building"  ng-click="selectB(building)" ondblclick="history.go(0)"><br>{{building.name}}</br></li>
+					</ul>
 				</div>
-				
-				<!--Coordinates div -->
-				<div class="Coordinates">
-				<div  class="span6" id="mouse-position">&nbsp;</div>
-				<div id="cim" class="cim"></div>
-				<div id="text" class="text">Coordinates:</div>	
-				
+				<div id="Floors" >	
+					
+					<ul class="nav nav-pills nav-stacked" ng:repeat="floor in selectedB.floors">
+						
+						<li id="Floor" ng:click="selectF(floor)" ><br>{{floor.id}}</br></li>
+					</ul>
 				</div>
 				
 				
+				 
+				<div id="Rooms" style="display:none;">
+					<p  style ="border-bottom: 1px solid  #eeeeee;">Rooms:</p>
+					<ul   class="nav nav-pills nav-stacked" ng:repeat="room in selectedF.rooms">
+						<li id="Room">{{room}}</li>
+					</ul>	
+				</div>
+				
+			</div>
+			<!--Coordinates+links-->
+			
+			<div class="Coordinates">
+			<div  class="span6" id="mouse-position">&nbsp;</div>
+			<div id="cim" class="cim"></div>
+			<div id="text" class="text">Coordinates:</div>	
+			</div>
 		</div>
 		
-		<!--****************--Search--**********************-->
-		<div id="search" style="z-index:10000; position:absolute; top:10px; right:10px;">
+		<!--**************************************-->
+
+		<div id="search" style="z-index:10000; position:absolute;top:10px;right:10px;">
 			<input id="addr" type="text" name="addr" value='' size="10" />
 			<button type="button" id="gobutt" onclick="keres()">Search</button>
 			<div id="results" /></div>
 		</div>
 		
-		<!--****************--Buttons to download as Geopdf or pdf **********************-->
 		<button id="button" class="pdf_button" ><a id="printbtn" onclick="prntList()"><img src="pdf.png"  ></a></button>
 		<button id="button" class="geopdf_button" onclick="on_off('geo-panel')"><img src="GeoPDF.png"  ></button>
-		
-		
-		<!--****************--Window to download**********************-->
-		<div id="geo-panel">
+<div id="geo-panel">
 			<iframe id="my_iframe" style="display:none;"></iframe>
 			<p>Choose the layers and press download!</p>
 
@@ -104,13 +109,12 @@
 			
 		</div>
 		
-		<!--****************--Div to change Floor Layer--**********************-->
 		<div id="csuszi" class="csuszi">
 		<form>
 		<input id="ep-opac" name="foo" type="range" min="1" max="3" step="1" value="1" oninput="setVal(this.value),csuszka()"></input>
 			</form>
 			</div>
-		<div id="emeletek_label">Floors</div>
+    <div id="emeletek_label">Floors</div>
 		
 		
 	
@@ -118,8 +122,10 @@
 		
 	
 	<script src="ol/app.js" type="text/javascript"></script>
-	<script src="ol/layers.js" type="text/javascript"></script>
+  <script src="ol/layers.js" type="text/javascript"></script>
 	<script src="ol/print.js" type="text/javascript"></script>
+	<script src="Tab_Functions.js" type="text/javascript"></script>
+	<script src="Accordion.js" type="text/javascript"></script>
 	<script src="pdf/gkk_pdf_v1_0.js" type="text/javascript"></script>
 	
 	

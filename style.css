@@ -1,16 +1,35 @@
+
+#dropdown{right:0px;}
 @media mobiles (max-width:768px){ 
 	#sidebar{width:20%;} 	
+	.container{ width:80%;} 
+	 
 	}
 
 @media tablets (min-width:768px)and(max-width:992px){ 
-	#sidebar{width:20%;}
+	#sidebar{
+		width:20%;}
+		
+	
+	.container{
+		width:80%;
+	} 
+	
 }
 
 @media tablets (min-width:992px){ 
-	#sidebar{width:20%;}
-} 
 	
+	#sidebar{
+		width:20%;
+		
+	} 
 	
+	.container{
+		width:80%;
+	} 
+}
+}
+
 #map {
 		position:absolute;
 		left:0px;
@@ -98,7 +117,6 @@
 		color:white;
 		cursor:pointer;
 		}
-		
 	#geo-panel{
 		overflow-y:hidden;
 		overflow-x:hidden;
@@ -133,7 +151,6 @@ a:active{color:red;}
 		}
  		
 /*Side Bar*/
-
 .Coordinates{
 position: absolute;
 margin-top:10px;
@@ -141,9 +158,7 @@ left:10px;
 bottom:10px;
 width:150px;
 
-
 }
-
 #Campus{
 	margin-left: 2px;
 	margin-right:0px;
@@ -160,7 +175,6 @@ width:150px;
 	text-align: center;
 	opacity: 0.97; 
 	z-index: 1;
-	
 }
  #side-bar{
 	position:absolute; 
@@ -215,10 +229,55 @@ width:150px;
 	border-radius: 6px ;
 	}
 
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
 
 
+::-webkit-scrollbar-track {
+border: 1px solid #eeeeee;
+border-radius: 10px;
+}
 
-/*Buttons*/
+::-webkit-scrollbar-thumb {
+background: #eeeeee;  
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background:white;  
+}
+.filter{
+	position:floating; 
+	margin-left:10px;
+	margin-bottom:10px;
+	margin-top:10px;
+	margin-right:10px;
+	opacity: 0.96;
+	z-index:100000;
+	border-radius: 5px 5px 0 0;
+}
+/*Navigation Bar*/
+.nav a {
+  color: #5a5a5a;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 14px 10px;
+ 
+}
+.nav li {
+  display: inline;
+}
+ 
+.nav-tabs > li > a {
+    font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+	color:  white;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+}
 
 .pdf_button{
 position:absolute;
@@ -350,13 +409,8 @@ input[type=range]::-moz-range-thumb {
     background-color: rgba(120,185,187,1);
     margin-top: -4px;
 	}	
-	
-input[type=range]:-moz-focusring {
-    outline: none;
-}
-input[type=range]:focus::-moz-range-track {
-    background: #fff;
-}
+input[type=range]:-moz-focusring { outline: none;}
+input[type=range]:focus::-moz-range-track {background: #fff;}
 
 #ho-b{
 margin-left:10px;
@@ -372,5 +426,3 @@ position:relative;
 
 margin-left:10px;
 padding-left:10px;}
-
-
