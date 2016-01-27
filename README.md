@@ -47,6 +47,6 @@ In this application the program creates a VRT file by itself so it was only need
 In case someone wants to use the GeoSpatial PDF creation in other projects he/she has first to define the layers as a JSON array, add this object to the layer collection JSON. After he/she has to define the mandatory arguments for the GDAL_Translate: SRS, raster url, vector url, output url, output filename, display attribute. If the user has not got a GUI with an Openlayers map or he/she just does not want to use the Javascripts, he/she can set the map extent manually in this form:
 „X1 Y1 X2 Y2” where X1-Y1 are the coordinates of the upper left corner and X2-Y2 are the coordinates of the lower right corner.
 If the php has got the permissions to run and create new files and all the file Urls are correct, the application will create the GeoSpatial PDF. The Gdal translate command can handle much more other possibilities to add more features to the document. The users can implement these easily to their code if they follow the current syntax (define them as a variable and add them to the right place in the command).
-Chat Conversation End
+
 
   
