@@ -1,0 +1,435 @@
+#===========================================================================
+# allowed DPIs
+#===========================================================================
+dpis: [75, 150, 300, 600, 1200]
+
+
+formats:
+  - pdf
+  - png
+
+#===========================================================================
+# the allowed scales
+#===========================================================================
+scales:
+  - 50
+  - 100
+  - 25
+  - 160
+  - 281
+  - 562
+  - 1125
+  - 2250
+  - 4500
+  - 9000
+  - 10000
+  - 18000
+  - 25000
+  - 36000
+  - 50000
+  - 72000
+  - 100000
+  - 200000
+  - 500000
+  - 1000000
+  - 2000000
+  - 4000000
+
+#===========================================================================
+# the list of allowed hosts
+#===========================================================================
+hosts:
+  - !localMatch
+    dummy: true
+  - !ipMatch
+    ip: www.camptocamp.org
+  - !dnsMatch
+    host: labs.metacarta.com
+    port: 80
+  - !dnsMatch
+    host: terraservice.net
+    port: 80
+  - !dnsMatch
+    host: sigma.openplans.org
+  - !dnsMatch
+    host: demo.mapfish.org
+  - !dnsMatch
+    host: a.tile.openstreetmap.org
+  - !dnsMatch
+    host: a.tile.osm.org
+layouts:
+  Legal:
+    mainPage:
+      pageSize: LEGAL
+      items:
+        - !map
+          spacingAfter: 0
+          width: 440
+          height: 400
+  #===========================================================================
+  A4 portrait:
+  #===========================================================================
+         
+
+    #-------------------------------------------------------------------------
+    mainPage:
+      pageSize: A4
+      landscape: false
+      rotation: true
+#      header:
+#        height: 20
+#        items:
+#          - !text
+#            font: Helvetica
+#            fontSize: 30
+#            align: right
+#            text: '${layout}'
+      items:
+        - !text
+          text: '${mapTitle}'
+          fontSize: 24
+          font: Helvetica
+          spacingAfter: 40
+          align: center
+        - !map
+          spacingAfter: 0
+          width: 440
+          height: 400
+        - !columns
+          # columns can have an absolute position. In that case, they need the 3 following fields:
+          absoluteX: 300
+          absoluteY: 355
+          width: 100
+          items:
+            - !scalebar
+              type: bar
+              maxSize: 200
+              barBgColor: white
+              fontSize: 8
+              align: right
+              units: km
+              barsize: 5
+              intervals: 3
+        - !columns
+          # columns can have an absolute position. In that case, they need the 3 following fields:
+          absoluteX: 80
+          absoluteY: 320
+          width: 300
+          items:
+            - !text
+              text: '${comment}'
+              align: left
+              spacingAfter: 30     
+        - !attributes
+          source: data
+          spacingAfter: 30
+          borderWidth: 2
+          columnDefs:
+            id:
+              columnWeight: 2
+              header: !text
+                text: ID
+                backgroundColor: #A0A0A0
+              cell: !text
+                text: 'Azonosito'
+            name:
+              columnWeight: 5
+              header: !text
+                text: Name
+                backgroundColor: #A0A0A0
+              cell: !columns
+                config:
+                  cells:
+                    - backgroundColor: '${nameBackgroundColor}'
+                      borderWidth: 1
+                      borderColor: '${nameBorderColor}'
+                items:
+                  - !text
+                    text: '$nev'            
+        - !columns
+          absoluteX: 30
+          absoluteY: 100
+          width: 100
+          items:
+            - !image
+              maxWidth: 80
+              maxHeight: 80
+              align: right
+              url: '${icon}'   
+        - !columns
+          absoluteX: 430
+          absoluteY: 50
+          width: 100
+          items:
+            - !text
+              font: Helvetica
+              fontSize: 9
+              align: right
+              text: '${now yyyy.MM.dd}'
+              spacingBefore: 50
+            - !text
+              font: Helvetica
+              fontSize: 9
+              align: right
+              text: '${now hh.mm.ss}'
+              spacingBefore: 50
+        - !columns
+          absoluteX: 50
+          absoluteY: 200
+          width: 100
+          items:
+            - !legends
+              backgroundColor: #FFFFFF
+              borders: true
+              horizontalAlignment: center
+              maxWidth: 100
+              maxHeight: 100
+              iconMaxWidth: 8
+              iconMaxHeight: 8            
+              textMaxWidth: 8
+              textMaxHeight: 8              
+              defaultScale: 1.0
+              inline: true
+              classIndentation: 20
+              layerSpaceBefore: 5
+              layerSpace: 5
+              classSpace: 2
+              layerFont: Helvetica
+              layerFontSize: 10
+              classFont: Helvetica
+              classFontSize: 8
+              fontEncoding: Cp1252
+              columnMargin: 3
+      footer: *commonFooter
+
+
+
+  #===========================================================================
+  A4 landscape:
+  #===========================================================================
+         
+
+    #-------------------------------------------------------------------------
+    mainPage:
+      pageSize: A4
+      landscape: true
+      rotation: true
+#      header:
+#        height: 20
+#        items:
+#          - !text
+#            font: Helvetica
+#            fontSize: 30
+#            align: right
+#            text: '${layout}'
+      items:
+        - !map
+          spacingAfter: 0
+          width: 800
+          height: 540
+        - !columns
+          absoluteX: 720
+          absoluteY: 22
+          width: 100
+          items:
+            - !scalebar
+              type: bar
+              maxSize: 200
+              barBgColor: white
+              fontSize: 8
+              align: right
+              units: km
+              barsize: 5
+              intervals: 3
+        - !columns
+          absoluteX: 20
+          absoluteY: 22
+          width: 400
+          items:
+            - !text
+              text: '${comment}'
+              align: left
+              spacingAfter: 30
+              fontSize: 10
+        - !columns
+          absoluteX: 305
+          absoluteY: 21
+          width: 100
+          items:
+            - !text
+              font: Helvetica
+              fontSize: 9
+              align: right
+              text: '${now yyyy.MM.dd}'
+              spacingBefore: 20
+            - !text
+              font: Helvetica
+              fontSize: 9
+              align: right
+              text: '${now hh:mm:ss}'
+              spacingBefore: 20
+         
+      footer: *commonFooter
+
+  #===========================================================================
+  A0 landscape:
+  #===========================================================================
+         
+
+    #-------------------------------------------------------------------------
+    mainPage:
+      pageSize: A0
+      landscape: true
+      rotation: true
+#      header:
+#        height: 20
+#        items:
+#          - !text
+#            font: Helvetica
+#            fontSize: 30
+#            align: right
+#            text: '${layout}'
+      items:
+        - !map
+          spacingAfter: 0
+          width: 3320
+          height: 2320
+         
+      footer: *commonFooter
+
+
+ #===========================================================================
+  A3 portrait:
+  #===========================================================================
+         
+
+    #-------------------------------------------------------------------------
+    mainPage:
+      pageSize: A3
+      landscape: true
+      rotation: true
+#      header:
+#        height: 20
+#        items:
+#          - !text
+#            font: Helvetica
+#            fontSize: 30
+#            align: right
+#            text: '${layout}'
+      items:
+        - !text
+          text: '${mapTitle}'
+          fontSize: 24
+          font: Helvetica
+          spacingAfter: 40
+          align: center
+        - !map
+          spacingAfter: 0
+          width: 440
+          height: 400
+        - !columns
+          # columns can have an absolute position. In that case, they need the 3 following fields:
+          absoluteX: 300
+          absoluteY: 355
+          width: 100
+          items:
+            - !scalebar
+              type: bar
+              maxSize: 200
+              barBgColor: white
+              fontSize: 8
+              align: right
+              units: km
+              barsize: 5
+              intervals: 3
+        - !columns
+          # columns can have an absolute position. In that case, they need the 3 following fields:
+          absoluteX: 80
+          absoluteY: 320
+          width: 300
+          items:
+            - !text
+              text: '${comment}'
+              align: left
+              spacingAfter: 30     
+        - !attributes
+          source: data
+          spacingAfter: 30
+          borderWidth: 2
+          columnDefs:
+            id:
+              columnWeight: 2
+              header: !text
+                text: ID
+                backgroundColor: #A0A0A0
+              cell: !text
+                text: 'Azonosito'
+            name:
+              columnWeight: 5
+              header: !text
+                text: Name
+                backgroundColor: #A0A0A0
+              cell: !columns
+                config:
+                  cells:
+                    - backgroundColor: '${nameBackgroundColor}'
+                      borderWidth: 1
+                      borderColor: '${nameBorderColor}'
+                items:
+                  - !text
+                    text: '$nev'            
+        - !columns
+          absoluteX: 30
+          absoluteY: 100
+          width: 100
+          items:
+            - !image
+              maxWidth: 80
+              maxHeight: 80
+              align: right
+              url: '${icon}'   
+        - !columns
+          absoluteX: 430
+          absoluteY: 50
+          width: 100
+          items:
+            - !text
+              font: Helvetica
+              fontSize: 9
+              align: right
+              text: '${now yyyy.MM.dd}'
+              spacingBefore: 50
+            - !text
+              font: Helvetica
+              fontSize: 9
+              align: right
+              text: '${now hh.mm.ss}'
+              spacingBefore: 50
+        - !columns
+          absoluteX: 50
+          absoluteY: 200
+          width: 100
+          items:
+            - !legends
+              backgroundColor: #FFFFFF
+              borders: true
+              horizontalAlignment: center
+              maxWidth: 100
+              maxHeight: 100
+              iconMaxWidth: 8
+              iconMaxHeight: 8            
+              textMaxWidth: 8
+              textMaxHeight: 8              
+              defaultScale: 1.0
+              inline: true
+              classIndentation: 20
+              layerSpaceBefore: 5
+              layerSpace: 5
+              classSpace: 2
+              layerFont: Helvetica
+              layerFontSize: 10
+              classFont: Helvetica
+              classFontSize: 8
+              fontEncoding: Cp1252
+              columnMargin: 3
+      footer: *commonFooter
