@@ -4,15 +4,10 @@ This is a project about WebGIS-Application to generate Geospatial PDFs using GDA
 The application has been made to get an interface where we can implement the Geospatial PDF generator.
 The main topic was to create a server side softver witch create Geospatial PDF from OSM data.
 # Authors
-Avgi Sotiropoulou (avgi.sotiropoulou@gmail.com)
-
 Bence Bártfay (bartfay92@gmail.com)
-
-Marina Tabacari
 
 Tibor Kovács (t160rkovacs@gmail.com)
 
-Vahram Dilbaryan
 #Software used
     GDA/OGR library
     PostgreSQL 9.5
